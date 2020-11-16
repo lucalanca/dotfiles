@@ -19,15 +19,33 @@ alias leftHalf ${sox};${soy} ${ssx}/2;${ssy}
 alias bottomHalf ${sox};${soy}+${ssy}/2 ${ssx};${ssy}/2
 alias topHalf ${sox};${soy} ${ssx};${ssy}/2
 alias rightHalf ${sox}+${ssx}/2;${soy} ${ssx}/2;${ssy}
+
 alias topLeftQuarter ${sox};${soy} ${ssx}/2;${ssy}/2
 alias topRightQuarter ${sox}+${ssx}/2;${soy} ${ssx}/2;${ssy}/2
 alias bottomLeftQuarter ${sox};${soy}+${ssy}/2 ${ssx}/2;${ssy}/2
 alias bottomRightQuarter ${sox}+${ssx}/2;${soy}+${ssy}/2 ${ssx}/2;${ssy}/2
 
+
+alias leftThird ${sox};${soy} ${ssx}/3;${ssy}
+alias centerThird ${sox}+1*${ssx}/3;${soy} 1*${ssx}/3;${ssy}
+alias rightThird ${sox}+2*${ssx}/3;${soy} 1*${ssx}/3;${ssy}
+
+alias leftTwoThirds ${sox};${soy} 2*${ssx}/3;${ssy}
+alias rightTwoThirds ${sox}+1*${ssx}/3;${soy} 2*${ssx}/3;${ssy}
+
 # Bindings
-bind c:ctrl;alt move ${centered}
-bind f:ctrl;alt move ${fullscreen}
-bind left:ctrl;alt move ${leftHalf}
-bind down:ctrl;alt move ${bottomHalf}
-bind up:ctrl;alt move ${topHalf}
-bind right:ctrl;alt move ${rightHalf}
+alias hyper ctrl;alt
+
+bind c:${hyper} move ${centered}
+bind m:${hyper} move ${fullscreen}
+bind left:${hyper} move ${leftHalf}
+bind down:${hyper} move ${bottomHalf}
+bind up:${hyper} move ${topHalf}
+bind right:${hyper} move ${rightHalf}
+
+bind 1:${hyper} move ${leftThird}
+bind 2:${hyper} move ${centerThird}
+bind 3:${hyper} move ${rightThird}
+
+bind 5:${hyper} move ${leftTwoThirds}
+bind 6:${hyper} move ${rightTwoThirds}
